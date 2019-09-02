@@ -6,7 +6,7 @@ all: tests
 tests: mem
 
 mem: safe_free
-	./safe_free
+	$(foreach test,$^,./$(test))
 
 safe_free: safe_free.o
 	$(CC) $(CFLAGS) $(CPPFLAGS) -I ../include    -o $@ $^ $(LDFLAGS) $(LIBS)
