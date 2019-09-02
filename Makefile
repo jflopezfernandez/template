@@ -1,17 +1,17 @@
 
 vpath %.c src
 
-RM       := $(strip rm -f)
+export RM       := $(strip rm -f)
 
-CC       := $(CC)
-CFLAGS   := $(strip $(CFLAGS) -std=c17 -Wall -Wextra -Wpedantic)
-CPPFLAGS := $(strip $(CPPFLAGS) -D_GNU_SOURCE -D_POSIX_C_SOURCE)
-LDFLAGS  :=
-LIBS     :=
+export CC       := $(CC)
+export CFLAGS   := $(strip $(CFLAGS) -std=c17 -Wall -Wextra -Wpedantic)
+export CPPFLAGS := $(strip $(CPPFLAGS) -D_GNU_SOURCE -D_POSIX_C_SOURCE)
+export LDFLAGS  :=
+export LIBS     :=
 
 OBJS     := $(patsubst %.c,%.o,$(notdir $(wildcard src/*.c)))
 
-TESTDIR  := $(strip test)
+TESTDIR  := $(strip tests)
 
 TARGET   := template
 
