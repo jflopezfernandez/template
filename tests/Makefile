@@ -1,3 +1,3 @@
 
 all:
-	@echo "Building tests..."
+	@echo "TODO: Write tests..."
