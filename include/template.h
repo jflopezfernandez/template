@@ -9,4 +9,6 @@
 enum { FALSE = 0, TRUE = !FALSE };
 #endif
 
+#include "mem.h"
+
 #endif // PROJECT_INCLUDES_TEMPLATE_H
