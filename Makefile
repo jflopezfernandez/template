@@ -30,3 +30,7 @@ check: $(OBJS)
 .PHONY: clean
 clean:
 	$(RM) *.o $(TARGET)
+
+.PHONY: clean-test-dir
+clean-test-dir:
+	$(MAKE) -C $(TESTDIR) clean
