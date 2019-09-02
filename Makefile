@@ -1,7 +1,15 @@
 
 vpath %.c src
 
-OBJS = $(patsubst %.c,%.o,$(notdir $(wildcard src/*.c)))
+RM      :=$(strip rm -f)
+
+CC      :=$(CC)
+CFLAGS  :=$(strip $(CFLAGS) -std=c17 -Wall -Wextra -Wpedantic)
+CPPFLAGS:=$(strip $(CPPFLAGS) -D_GNU_SOURCE -D_POSIX_C_SOURCE)
+LDFLAGS :=
+LIBS    :=
+
+OBJS    := $(patsubst %.c,%.o,$(notdir $(wildcard src/*.c)))
 
 TARGET = template
 
@@ -15,4 +23,4 @@ $(TARGET): $(OBJS)
 
 .PHONY: clean
 clean:
-	rm -f *.o $(TARGET)
+	$(RM) *.o $(TARGET)
