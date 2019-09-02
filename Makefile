@@ -1,11 +1,11 @@
 
 vpath %.c src
 
-RM       :=$(strip rm -f)
+RM       := $(strip rm -f)
 
-CC       :=$(CC)
-CFLAGS   :=$(strip $(CFLAGS) -std=c17 -Wall -Wextra -Wpedantic)
-CPPFLAGS :=$(strip $(CPPFLAGS) -D_GNU_SOURCE -D_POSIX_C_SOURCE)
+CC       := $(CC)
+CFLAGS   := $(strip $(CFLAGS) -std=c17 -Wall -Wextra -Wpedantic)
+CPPFLAGS := $(strip $(CPPFLAGS) -D_GNU_SOURCE -D_POSIX_C_SOURCE)
 LDFLAGS  :=
 LIBS     :=
 
