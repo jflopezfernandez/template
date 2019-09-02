@@ -5,7 +5,10 @@ TARGET = template
 
 all: $(TARGET)
 
-$(TARGET): main.c
+$(TARGET): main.o
+	$(CC) $(CFLAGS) $(CPPFLAGS) -I include -o $@ $^ $(LDFLAGS) $(LIBS)
+
+main.o: main.c
 
 .PHONY: clean
 clean:
