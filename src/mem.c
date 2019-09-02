@@ -1,4 +1,12 @@
 
 #include "template.h"
 
-// TODO: Implement mem.c
+void safe_free(void** ptr) {
+    if (*ptr == NULL) {
+        return;
+    }
+
+    free(*ptr);
+
+    *ptr = NULL;
+}
