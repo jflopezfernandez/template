@@ -11,6 +11,8 @@ LIBS     :=
 
 OBJS     := $(patsubst %.c,%.o,$(notdir $(wildcard src/*.c)))
 
+TESTDIR  := $(strip test)
+
 TARGET   := template
 
 all: $(TARGET)
@@ -20,6 +22,10 @@ $(TARGET): $(OBJS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) $(CPPFLAGS) -I include -c -o $@ $^ $(LDFLAGS) $(LIBS)
+
+.PHONY: check
+check: $(OBJS)
+	$(MAKE) -C $(TESTDIR)
 
 .PHONY: clean
 clean:
