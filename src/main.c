@@ -1,9 +1,13 @@
 
 #include "template.h"
 
-int main(void)
+int main(int argc, char *argv[])
 {
-    printf("testing...\n");
+    for (int i = 1; i < argc; ++i) {
+        char* str = strdup(argv[i]);
+        printf("%s\n", str);
+        free(str);
+    }
 
     return EXIT_SUCCESS;
 }
